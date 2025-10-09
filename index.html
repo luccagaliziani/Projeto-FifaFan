@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA Fan Page - Início</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8b5cf6;
+            --primary-hover: #7c3aed;
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: #cbd5e1;
+        }
+        .hero-video {
+            position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; object-fit: cover; transform: translate(-50%, -50%); z-index: -1;
+        }
+        .hero-overlay {
+            background-image: linear-gradient(to top, rgba(15, 23, 42, 1), rgba(15, 23, 42, 0.6));
+        }
+        .menu-item {
+            position: relative; padding-bottom: 4px;
+        }
+        .menu-item::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-color); transition: width 0.3s ease-in-out;
+        }
+        .menu-item:hover::after, .menu-item.active::after {
+            width: 100%;
+        }
+        .menu-item.active {
+            color: white;
+        }
+        .card-hover-effect {
+            background-color: var(--dark-card); transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(139, 92, 246, 0.2), 0 10px 10px -5px rgba(139, 92, 246, 0.1);
+        }
+        .btn-purple {
+            background-color: var(--primary-color); transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-purple:hover {
+            background-color: var(--primary-hover); transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-slate-700/50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-black text-white tracking-wider">
+                FIFA<span class="text-violet-400">FAN</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="menu-item active">Início</a>
+                <a href="historia.html" class="menu-item">História</a>
+                <a href="modos.html" class="menu-item">Modos de Jogo</a>
+                <a href="cartas.html" class="menu-item">Cartas Especiais</a>
+                <a href="dicas.html" class="menu-item">Dicas</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800">
+            <a href="index.html" class="block py-3 px-6 text-sm hover:bg-slate-700/50">Início</a>
+            <a href="historia.html" class="block py-3 px-6 text-sm hover:bg-slate-700/50">História</a>
+            <a href="modos.html" class="block py-3 px-6 text-sm hover:bg-slate-700/50">Modos de Jogo</a>
+            <a href="cartas.html" class="block py-3 px-6 text-sm hover:bg-slate-700/50">Cartas Especiais</a>
+            <a href="dicas.html" class="block py-3 px-6 text-sm hover:bg-slate-700/50">Dicas</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <video autoplay muted loop class="hero-video">
+                <source src="https://cdn.pixabay.com/video/2023/07/22/173000-846430932_large.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay absolute top-0 left-0 w-full h-full"></div>
+            <div class="relative z-10 px-4" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-4 uppercase tracking-widest">
+                    O Campo Virtual <span class="text-violet-400">É Todo Seu</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+                    Sua central definitiva para notícias, história, dicas e tudo sobre a maior franquia de futebol do mundo.
+                </p>
+                <a href="modos.html" class="btn-purple text-white font-bold py-3 px-8 rounded-full text-lg uppercase tracking-wider">
+                    Explore os Modos
+                </a>
+            </div>
+        </section>
+
+        <section id="features" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-white mb-12" data-aos="fade-up">Explore o Universo do Jogo</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="card-hover-effect rounded-lg p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://i.pinimg.com/736x/72/cf/fa/72cffa8db25fb6e91e67326b1d655294.jpg" class="mx-auto mb-4 rounded-full w-24 h-24 object-cover" alt="Ícone Ultimate Team">
+                        <h3 class="text-xl font-bold text-white mb-2">Ultimate Team</h3>
+                        <p class="text-sm">Monte o time dos seus sonhos e compita no modo mais popular.</p>
+                    </div>
+                    <div class="card-hover-effect rounded-lg p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://preview.redd.it/fifa-ea-fc-career-mode-conspiracy-v0-buutttpnuwkf1.jpeg?width=640&crop=smart&auto=webp&s=c13eeb43c7cdc33969924ab619f8f15b5270f2b9" class="mx-auto mb-4 rounded-full w-24 h-24 object-cover" alt="Ícone Modo Carreira">
+                        <h3 class="text-xl font-bold text-white mb-2">Modo Carreira</h3>
+                        <p class="text-sm">Leve seu clube à glória ou crie sua própria lenda.</p>
+                    </div>
+                    <div class="card-hover-effect rounded-lg p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Pro_clubs.png" class="mx-auto mb-4 rounded-full w-24 h-24 object-cover" alt="Ícone Pro Clubs">
+                        <h3 class="text-xl font-bold text-white mb-2">Pro Clubs</h3>
+                        <p class="text-sm">Junte-se a amigos e compita em partidas 11 contra 11.</p>
+                    </div>
+                    <div class="card-hover-effect rounded-lg p-6 text-center" data-aos="fade-up" data-aos-delay="400">
+                        <img src="https://images.seeklogo.com/logo-png/38/1/volta-football-logo-png_seeklogo-389119.png" class="mx-auto mb-4 rounded-full w-24 h-24 object-cover" alt="Ícone VOLTA">
+                        <h3 class="text-xl font-bold text-white mb-2">VOLTA Football</h3>
+                        <p class="text-sm">Leve o futebol de volta às ruas com dribles e estilo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-800">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/07/Capa-completa-EA-Sports-FC-26.jpg?w=849&h=477&crop=0" class="rounded-lg shadow-2xl w-full" alt="Capa de uma edição do FIFA">
+                </div>
+                <div data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-white mb-4">Mais de 30 Anos de Futebol Virtual</h2>
+                    <p class="mb-6">
+                        Desde o seu lançamento em 1993, a franquia redefiniu os jogos de esporte, evoluindo a cada ano com gráficos realistas, jogabilidade aprimorada e licenças oficiais que trazem o mundo do futebol para o seu console.
+                    </p>
+                    <a href="historia.html" class="btn-purple text-white font-bold py-3 px-6 rounded-full inline-block">
+                        Conheça a História &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 border-t border-slate-700 py-8">
+        <div class="container mx-auto px-6 text-center text-slate-400">
+            <p class="text-sm">&copy; 2025 FIFA Fan Page. Projeto acadêmico sem fins lucrativos.</p>
+        </div>
+    </footer>
+    
+    <button id="to-top-button" title="Voltar ao topo" class="hidden fixed bottom-5 right-5 p-3 rounded-full bg-violet-500 text-white hover:bg-violet-600 transition-all duration-300 shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuOpenIcon.classList.toggle('hidden');
+            menuCloseIcon.classList.toggle('hidden');
+        });
+        const toTopButton = document.getElementById("to-top-button");
+        if(toTopButton) {
+            window.onscroll = () => {
+                if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                    toTopButton.classList.remove("hidden");
+                } else {
+                    toTopButton.classList.add("hidden");
+                }
+            };
+            toTopButton.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
